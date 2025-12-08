@@ -1,0 +1,244 @@
+.filter-panel-horizontal {
+  width: 100%;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+
+.filter-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #6366f1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.filter-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.filter-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.filter-dropdown label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6366f1;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.filter-dropdown select,
+.filter-dropdown input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  background: white;
+  color: #111827;
+  transition: all 0.3s ease;
+  height: 44px;
+  min-width: 0;
+}
+
+body.dark-mode .filter-dropdown select,
+body.dark-mode .filter-dropdown input {
+  background: #1e293b;
+  border-color: #374151;
+  color: white;
+}
+
+.filter-dropdown select:focus,
+.filter-dropdown input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.1);
+}
+
+.range-inputs-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  width: 100%;
+}
+
+.range-inputs-inline span {
+  color: #6b7280;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.range-inputs-inline input {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  flex: 1;
+}
+
+.reset-filters-btn {
+  height: 44px;
+  width: 44px;
+  padding: 0;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.reset-filters-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(239,68,68,0.4);
+}
+
+.apply-filters-btn {
+  height: 44px;
+  padding: 0 24px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.apply-filters-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+}
+
+/* Responsive fixes */
+@media (max-width: 1200px) {
+  .filter-row {
+    gap: 12px;
+  }
+  
+  .filter-dropdown {
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .filter-row {
+    gap: 12px;
+  }
+  
+  .filter-dropdown {
+    min-width: 130px;
+  }
+}
+
+@media (max-width: 900px) {
+  .filter-row {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+  }
+  
+  .filter-dropdown {
+    min-width: 100%;
+  }
+  
+  .range-inputs-inline {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  
+  .filter-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .reset-filters-btn,
+  .apply-filters-btn {
+    flex: 1;
+  }
+  
+  .filter-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .range-inputs-inline {
+    grid-column: span 1;
+  }
+  
+  .filter-dropdown {
+    width: 100%;
+    min-width: 100%;
+  }
+  
+  .reset-filters-btn {
+    width: 100%;
+    height: 48px;
+  }
+  
+  .apply-filters-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .reset-filters-btn,
+  .apply-filters-btn {
+    width: 100%;
+  }
+}

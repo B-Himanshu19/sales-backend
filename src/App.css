@@ -1,0 +1,153 @@
+@import './components/ResponsiveContainer.css';
+
+/* Remove any existing overflow-x rules that conflict */
+.app {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.main-wrapper {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+/* Add to App.css or create a new TopBar.css */
+
+.top-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.mobile-menu-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.sort-dropdown-container {
+  min-width: 200px;
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+}
+
+/* Responsive fixes for top bar */
+@media (min-width: 769px) {
+  .top-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .top-bar-right {
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .top-bar {
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .top-bar-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .top-bar-right {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  
+  .sort-dropdown-container {
+    width: 100%;
+    min-width: 100%;
+  }
+  
+  .theme-toggle-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-bar {
+    padding: 12px;
+    gap: 12px;
+  }
+  
+  .top-bar-left h1.page-title {
+    font-size: 20px;
+  }
+  
+  .mobile-menu-btn {
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+  
+  .theme-toggle-btn {
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+}
